@@ -1,8 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, ParseUUIDPipe, Post, Put } from '@nestjs/common';
 import { SocioService } from './socio.service';
 import { plainToInstance } from 'class-transformer';
-import { ClubDto } from 'src/club/club.dto/club.dto';
-import { ClubEntity } from 'src/club/club.entity/club.entity';
 import { SocioDto } from './socio.dto/socio.dto';
 import { SocioEntity } from './socio.entity/socio.entity';
 
