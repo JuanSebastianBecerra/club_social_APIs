@@ -12,30 +12,30 @@ export class SociosClubsController {
     constructor(private readonly sociosClubsService: SociosClubsService){}
 
     @Post(':clubId/members/:socioId')
-    async agregarRecetaACultutaGastronomica(@Param('clubId') clubId: string, @Param('socioId') socioId: string) {
+    async addMemberToClub(@Param('clubId') clubId: string, @Param('socioId') socioId: string) {
         return await this.sociosClubsService.addMemberToClub(socioId, clubId);
     }
 
     @Get(':clubId/members/:socioId')
-    async obtenerRecetaPorclubId(@Param('clubId') clubId: string, @Param('socioId') socioId: string) {
+    async findMemberFromClub(@Param('clubId') clubId: string, @Param('socioId') socioId: string) {
         return await this.sociosClubsService.findMemberFromClub(socioId, clubId);
     }
 
     @Get(':clubId/members')
-    async obtenermembersPorclubId(@Param('clubId') clubId: string) {
+    async findMembersFromClub(@Param('clubId') clubId: string) {
         return await this.sociosClubsService.findMembersFromClub(clubId);
     }
 
    
     @Put(':clubId/members')
-    async associatemembersMuseum(@Body() socioDto: SocioDto[], @Param('clubId') clubId: string) {
+    async updateMembersFromClub(@Body() socioDto: SocioDto[], @Param('clubId') clubId: string) {
         const socios = plainToInstance(SocioEntity, socioDto)
         return await this.sociosClubsService.updateMembersFromClub(socios, clubId);
     }
 
     @Delete(':clubId/members/:socioId')
     @HttpCode(204)
-    async deleteArtworkMuseum(@Param('clubId') clubId: string, @Param('socioId') socioId: string) {
+    async deleteMemberFromClub(@Param('clubId') clubId: string, @Param('socioId') socioId: string) {
         return await this.sociosClubsService.deleteMemberFromClub(socioId, clubId);
     }
 

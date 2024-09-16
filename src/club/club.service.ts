@@ -34,7 +34,7 @@ export class ClubService {
        
         club.id = id; 
        
-        return await this.clubRepository.save(club);
+        return await this.clubRepository.save({...persistedClub, ...club});
     }
  
     async delete(id: string) {
