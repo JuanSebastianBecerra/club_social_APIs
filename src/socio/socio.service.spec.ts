@@ -51,7 +51,7 @@ describe('SocioService', () => {
     expect(socio).not.toBeNull();
     expect(socio.usuario).toEqual(storedSocio.usuario)
     expect(socio.correo).toEqual(storedSocio.correo)
-    expect(socio.fecha_nacimiento).toEqual(storedSocio.fecha_nacimiento)
+    expect(socio.fechaNacimiento).toEqual(storedSocio.fechaNacimiento)
   });
 
   it('Buscar por un id que no existe', async () => {
@@ -63,7 +63,7 @@ describe('SocioService', () => {
       id: "",
       usuario: faker.person.firstName(),
       correo: faker.internet.email(),
-      fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
+      fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
       clubs: []
     }
 
@@ -74,7 +74,7 @@ describe('SocioService', () => {
     expect(storedSocio).not.toBeNull();
     expect(storedSocio.usuario).toEqual(nuevoSocio.usuario)
     expect(storedSocio.correo).toEqual(nuevoSocio.correo)
-    expect(storedSocio.fecha_nacimiento).toEqual(nuevoSocio.fecha_nacimiento)
+    expect(storedSocio.fechaNacimiento).toEqual(nuevoSocio.fechaNacimiento)
   });
 
   it('Actualizar un socio', async () => {

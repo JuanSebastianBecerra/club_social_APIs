@@ -79,7 +79,7 @@ describe('SociosClubsService', () => {
     expect(result.socios[0]).not.toBeNull();
     expect(result.socios[0].usuario).toBe(socio.usuario)
     expect(result.socios[0].correo).toEqual(socio.correo);
-    expect(result.socios[0].fecha_nacimiento).toEqual(socio.fecha_nacimiento);
+    expect(result.socios[0].fechaNacimiento).toEqual(socio.fechaNacimiento);
   });
 
   it('addMemberToClub debe lanzar una exception por un socio no existente', async () => {
@@ -120,7 +120,7 @@ describe('SociosClubsService', () => {
     expect(socioExistente).not.toBeNull();
     expect(socioExistente.usuario).toBe(socio.usuario);
     expect(socioExistente.correo).toEqual(socio.correo);
-    expect(socioExistente.fecha_nacimiento).toEqual(socio.fecha_nacimiento);
+    expect(socioExistente.fechaNacimiento).toEqual(socio.fechaNacimiento);
   });
 
   it('findMemberFromClub debe lanzar una exception para un socio no encontrado', async () => {
@@ -154,7 +154,7 @@ describe('SociosClubsService', () => {
 
     expect(clubUpdated.socios[0].usuario).toBe(socio.usuario);
     expect(clubUpdated.socios[0].correo).toEqual(socio.correo);
-    expect(clubUpdated.socios[0].fecha_nacimiento).toEqual(socio.fecha_nacimiento);
+    expect(clubUpdated.socios[0].fechaNacimiento).toEqual(socio.fechaNacimiento);
   });
 
   it('updateMembersFromClub debe lanzar una exception para una club no encontrado', async () => {

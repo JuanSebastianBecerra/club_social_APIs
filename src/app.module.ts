@@ -8,6 +8,7 @@ import { ClubEntity } from './club/club.entity/club.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SociosClubsService } from './socios-clubs/socios-clubs.service';
 import { SociosClubsModule } from './socios-clubs/socios-clubs.module';
+import { SocioService } from './socio/socio.service';
 
 @Module({
   imports: [SocioModule, ClubModule,
@@ -26,6 +27,6 @@ import { SociosClubsModule } from './socios-clubs/socios-clubs.module';
     SociosClubsModule,
   ],
   controllers: [AppController],
-  providers: [AppService, SociosClubsService],
+  providers: [AppService],
 })
 export class AppModule {}
