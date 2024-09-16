@@ -44,14 +44,14 @@ describe('SociosClubsService', () => {
       const socio: SocioEntity = await repositorySocio.save({
         usuario: faker.person.firstName(),
         correo: faker.internet.email(),
-        fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+        fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
       });
       sociosList.push(socio);
     }
 
     club = await repositoryClub.save({
       nombre: faker.person.firstName(),
-      fecha_fundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
+      fechaFundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
       urlImagen: faker.image.url(),
       descripcion: faker.lorem.paragraph(),
       socios: sociosList
@@ -62,12 +62,12 @@ describe('SociosClubsService', () => {
     const socio: SocioEntity = await repositorySocio.save({
       usuario: faker.person.firstName(),
       correo: faker.internet.email(),
-      fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+      fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
     });
 
     const club: ClubEntity = await repositoryClub.save({
       nombre: faker.person.firstName(),
-      fecha_fundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
+      fechaFundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
       urlImagen: faker.image.url(),
       descripcion: faker.lorem.paragraph(),
       socios: []
@@ -85,7 +85,7 @@ describe('SociosClubsService', () => {
   it('addMemberToClub debe lanzar una exception por un socio no existente', async () => {
     const club: ClubEntity = await repositoryClub.save({
       nombre: faker.person.firstName(),
-      fecha_fundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
+      fechaFundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
       urlImagen: faker.image.url(),
       descripcion: faker.lorem.paragraph(),
       socios: []
@@ -98,7 +98,7 @@ describe('SociosClubsService', () => {
     const socio: SocioEntity = await repositorySocio.save({
       usuario: faker.person.firstName(),
       correo: faker.internet.email(),
-      fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+      fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
     });
 
 
@@ -136,7 +136,7 @@ describe('SociosClubsService', () => {
     const socio: SocioEntity = await repositorySocio.save({
       usuario: faker.person.firstName(),
       correo: faker.internet.email(),
-      fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+      fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
     });
 
     await expect(() => serviceSocioClub.findMemberFromClub(socio.id, club.id)).rejects.toHaveProperty("mensaje", "El socio con el id dado no esta asociado al club");
@@ -146,7 +146,7 @@ describe('SociosClubsService', () => {
     const socio: SocioEntity = await repositorySocio.save({
       usuario: faker.person.firstName(),
       correo: faker.internet.email(),
-      fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+      fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
     });
 
     const clubUpdated: ClubEntity = await serviceSocioClub.updateMembersFromClub([socio], club.id);
@@ -161,7 +161,7 @@ describe('SociosClubsService', () => {
     const socio: SocioEntity = await repositorySocio.save({
       usuario: faker.person.firstName(),
       correo: faker.internet.email(),
-      fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+      fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
     });
 
     await expect(() => serviceSocioClub.updateMembersFromClub([socio], "0")).rejects.toHaveProperty("mensaje", "El club con el id dado no fue encontrada");
@@ -198,7 +198,7 @@ describe('SociosClubsService', () => {
     const socio: SocioEntity = await repositorySocio.save({
       usuario: faker.person.firstName(),
       correo: faker.internet.email(),
-      fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+      fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
     });
     await expect(() => serviceSocioClub.deleteMemberFromClub(socio.id, club.id)).rejects.toHaveProperty("mensaje", "El socio con el id dado no esta asociado al club");
   });

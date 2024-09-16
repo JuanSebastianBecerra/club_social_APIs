@@ -32,7 +32,7 @@ describe('ClubService', () => {
     for (let i = 0; i < 5; i++) {
       const club: ClubEntity = await repository.save({
         nombre: faker.person.firstName(),
-        fecha_fundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
+        fechaFundacion: faker.date.between({ from: '2000-01-01', to: '2010-01-01' }),
         urlImagen: faker.image.url(),
         descripcion: faker.lorem.paragraph()
       })

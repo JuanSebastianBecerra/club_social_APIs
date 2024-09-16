@@ -29,7 +29,7 @@ describe('SocioService', () => {
       const socio: SocioEntity = await repository.save({
         usuario: faker.person.firstName(),
         correo: faker.internet.email(),
-        fecha_nacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
+        fechaNacimiento: faker.date.between({ from: '2000-01-01', to: '2010-01-01' })
       })
       sociosList.push(socio);
     }
