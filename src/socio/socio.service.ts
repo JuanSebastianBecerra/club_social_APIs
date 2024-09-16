@@ -34,7 +34,7 @@ export class SocioService {
        
         socio.id = id; 
        
-        return await this.socioRepository.save(socio);
+        return await this.socioRepository.save({...persistedSocio, ...socio});
     }
  
     async delete(id: string) {

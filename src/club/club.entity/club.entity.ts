@@ -10,7 +10,7 @@ export class ClubEntity {
     nombre: string;
 
     @Column()
-    fecha_fundacion: Date;
+    fechaFundacion: Date;
 
     @Column()
     urlImagen: string;
